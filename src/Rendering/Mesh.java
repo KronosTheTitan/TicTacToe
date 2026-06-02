@@ -8,8 +8,8 @@ import java.util.Arrays;
 import static org.lwjgl.opengl.GL11.GL_TRIANGLES;
 import static org.lwjgl.opengl.GL11.GL_UNSIGNED_INT;
 
-
 public class Mesh {
+
     public Mesh(float[] pVertices, int[] pIndices) {
         vertices = pVertices;
         indices = pIndices;
