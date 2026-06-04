@@ -48,8 +48,6 @@ public class Texture {
 
         int[] pixels = image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
 
-        System.out.println(Integer.toHexString(image.getRGB(0,0)));
-
         ByteBuffer buffer = ByteBuffer.allocateDirect(pixels.length * 4);
 
         for (int y = image.getHeight() - 1; y >= 0; y--) {

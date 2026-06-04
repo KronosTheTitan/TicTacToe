@@ -7,7 +7,7 @@ public class GameObject {
 
     public boolean enabled = true;
 
-    ArrayList<GameObject> children;
+    protected ArrayList<GameObject> children;
 
     public GameObject(String name) {
         this.name = name;

@@ -3,7 +3,7 @@ package Rendering;
 import Rendering.Math.Mathf;
 import Rendering.Math.Vec2;
 
-import static org.lwjgl.glfw.GLFW.glfwGetCursorPos;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class Input {
     private static long Window;
@@ -25,5 +25,10 @@ public class Input {
         //return new Vec2(
           //      Mathf.remap(0,Config.windowX,0,Config.referenceX,x),
             //    Mathf.remap(0,Config.windowY,0,Config.referenceY,y));
+    }
+
+    public static boolean getMouseButtonDown() {
+        int state = glfwGetMouseButton(Window, GLFW_MOUSE_BUTTON_LEFT);
+        return (state == GLFW_PRESS);
     }
 }

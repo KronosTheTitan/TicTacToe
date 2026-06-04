@@ -3,8 +3,6 @@ import org.lwjgl.*;
 
 public class Main {
     public void run() {
-        System.out.println("Hello LWJGL " + Version.getVersion() + "!");
-
         Renderer renderer = new Renderer();
 
         Game game = new Game(renderer);

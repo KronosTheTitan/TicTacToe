@@ -14,8 +14,6 @@ public class Renderer {
     private long window;
 
     public void Setup(){
-        System.out.println("Setting up window");
-
         if ( !glfwInit() )
             throw new IllegalStateException("Unable to initialize GLFW");
 
@@ -54,8 +52,6 @@ public class Renderer {
 
             glfwSwapBuffers(window);
             glfwPollEvents();
-
-            System.out.println(Input.getMousePosition().toString());
         }
     }
 
