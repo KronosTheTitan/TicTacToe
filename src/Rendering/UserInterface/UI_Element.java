@@ -31,7 +31,7 @@ public class UI_Element extends GameObject {
         };
 
        mesh = new Mesh(data,indices);
-       shader = ShaderManager.instance.getUIShader();
+       shader = new UI_Shader();
        this.texture = texture;
     }
 
