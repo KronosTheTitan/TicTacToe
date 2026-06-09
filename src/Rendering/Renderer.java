@@ -2,7 +2,9 @@ package Rendering;
 
 import org.lwjgl.opengl.GL;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -10,8 +12,9 @@ import static org.lwjgl.opengl.GL40.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Renderer {
-    RenderLayer[] renderLayers;
     private long window;
+
+    ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     public void Setup(){
         if ( !glfwInit() )
@@ -34,10 +37,6 @@ public class Renderer {
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1);
 
-        renderLayers = new RenderLayer[1];
-        renderLayers[0] = new RenderLayer();
-        renderLayers[0].allowTransparency = true;
-
         GL.createCapabilities();
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -55,12 +54,12 @@ public class Renderer {
         }
     }
 
-    public void AddGameObject(GameObject gameObject, int layer){
-        renderLayers[layer].addGameObject(gameObject);
+    public void AddGameObject(GameObject gameObject){
+        gameObjects.add(gameObject);
     }
 
-    public void RemoveGameObject(GameObject gameObject, int layer){
-        renderLayers[layer].removeGameObject(gameObject);
+    public void RemoveGameObject(GameObject gameObject){
+        gameObjects.remove(gameObject);
     }
 
     public void Stop(){
@@ -70,8 +69,8 @@ public class Renderer {
     }
 
     void Render() {
-        for (int i = 0; i < renderLayers.length; i++) {
-            renderLayers[i].Render();
+        for (int i = 0; i < gameObjects.size(); i++) {
+            gameObjects.get(i).Render();
         }
     }
 }

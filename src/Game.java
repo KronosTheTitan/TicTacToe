@@ -85,7 +85,7 @@ public class Game extends GameObject{
             }
         }
 
-        renderer.AddGameObject(this,0);
+        renderer.AddGameObject(this);
 
         validator = new WinValidator();
     }
