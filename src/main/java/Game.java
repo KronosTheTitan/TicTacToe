@@ -2,13 +2,9 @@ import Rendering.*;
 import Rendering.Math.Vec2;
 import Rendering.UserInterface.Button;
 import Rendering.UserInterface.UI_Element;
-import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFW.*;
 
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_SPACE;
 
@@ -36,18 +32,18 @@ public class Game extends GameObject{
     }
 
     public void Start(){
-        Texture backgroundTex = new Texture("./resources/textures/BackgroundGrid.png");
+        Texture backgroundTex = new Texture("./src/main/resources/textures/BackgroundGrid.png");
         background = new UI_Element("Background", new Vec2(0,0), new Vec2(800, 800), backgroundTex);
 
-        Texture playerWinTex = new Texture("./resources/textures/playerWin.png");
+        Texture playerWinTex = new Texture("./src/main/resources/textures/playerWin.png");
         playerWin = new UI_Element("playerWin", new Vec2(0,0), new Vec2(800, 800), playerWinTex);
         playerWin.enabled = false;
 
-        Texture compWinTex = new Texture("./resources/textures/compWin.png");
+        Texture compWinTex = new Texture("./src/main/resources/textures/compWin.png");
         compWin = new UI_Element("compWin", new Vec2(0,0), new Vec2(800, 800), compWinTex);
         compWin.enabled = false;
 
-        Texture stalemateTex = new Texture("./resources/textures/stalemate.png");
+        Texture stalemateTex = new Texture("./src/main/resources/textures/stalemate.png");
         stalemate = new UI_Element("stalemate", new Vec2(0,0), new Vec2(800, 800), stalemateTex);
         stalemate.enabled = false;
 

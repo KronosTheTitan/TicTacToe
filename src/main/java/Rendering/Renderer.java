@@ -3,8 +3,6 @@ package Rendering;
 import org.lwjgl.opengl.GL;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -69,8 +67,8 @@ public class Renderer {
     }
 
     void Render() {
-        for (int i = 0; i < gameObjects.size(); i++) {
-            gameObjects.get(i).Render();
+        for (GameObject gameObject : gameObjects) {
+            gameObject.Render();
         }
     }
 }

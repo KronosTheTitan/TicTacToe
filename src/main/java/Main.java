@@ -1,5 +1,4 @@
 import Rendering.*;
-import org.lwjgl.*;
 
 public class Main {
     public void run() {

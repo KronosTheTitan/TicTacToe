@@ -4,17 +4,26 @@ import org.lwjgl.opengl.GL40;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class Shader {
     public Shader(String pVertexShader, String pFragmentShader) {
         try {
-            vertexShader = Files.readString(Path.of(pVertexShader) );
+            List<String> lines = Files.readAllLines(Paths.get(pVertexShader));
+
+            for (int i = 0; i < lines.size(); i++) {
+                vertexShader += lines.get(i);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         try {
-            fragmentShader = Files.readString(Path.of(pFragmentShader) );
+            List<String> lines = Files.readAllLines(Paths.get(pFragmentShader));
+
+            for (int i = 0; i < lines.size(); i++) {
+                fragmentShader += lines.get(i);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
