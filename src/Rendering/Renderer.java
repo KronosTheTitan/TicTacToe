@@ -17,7 +17,7 @@ public class Renderer {
         if ( !glfwInit() )
             throw new IllegalStateException("Unable to initialize GLFW");
 
-        window = glfwCreateWindow(Config.windowX,Config.windowY, "Project Venad", NULL, NULL);
+        window = glfwCreateWindow(Config.windowX,Config.windowY, "Tic Tac Toe (space to restart)", NULL, NULL);
 
         if (window == NULL) {
             glfwTerminate();

@@ -7,6 +7,11 @@ import jdk.jshell.spi.ExecutionControl;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFW.*;
+
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_SPACE;
+
 public class Game extends GameObject{
     Renderer renderer;
     Button[][] markings = new Button[3][9];
@@ -91,6 +96,31 @@ public class Game extends GameObject{
             return;
 
         Vec2 mousePos = Input.getMousePosition();
+
+        if(Input.getKeyDown(GLFW_KEY_SPACE)){
+            background.enabled = true;
+            stalemate.enabled = false;
+            playerWin.enabled = false;
+            compWin.enabled = false;
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 9; j++) {
+                    markings[i][j].enabled = (i == 0);
+                }
+            }
+
+            int[] newGame = {
+                    0, 0, 0,
+                    0, 0, 0,
+                    0, 0, 0
+            };
+
+            totalMoves = 0;
+
+            gameState = newGame;
+
+            gameActive = true;
+        }
 
         for (int i = 0; i < 9; i++) {
             if(!gameActive){

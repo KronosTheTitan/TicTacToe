@@ -31,4 +31,9 @@ public class Input {
         int state = glfwGetMouseButton(Window, GLFW_MOUSE_BUTTON_LEFT);
         return (state == GLFW_PRESS);
     }
+
+    public static boolean getKeyDown(int key){
+        int state = glfwGetKey(Window, key);
+        return (state == GLFW_PRESS);
+    }
 }
