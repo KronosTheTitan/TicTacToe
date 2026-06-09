@@ -53,10 +53,10 @@ public class Game extends GameObject{
         AddChild(stalemate);
 
         Texture[] textures = {
-                new Texture("./resources/textures/Blank.png"),
-                new Texture("./resources/textures/Cross.png"),
-                new Texture("./resources/textures/Circle.png"),
-                new Texture("./resources/textures/Hover.png")
+                new Texture("./src/main/resources/textures/Blank.png"),
+                new Texture("./src/main/resources/textures/Cross.png"),
+                new Texture("./src/main/resources/textures/Circle.png"),
+                new Texture("./src/main/resources/textures/Hover.png")
         };
 
         Vec2 markingExtents = new Vec2(224,224);

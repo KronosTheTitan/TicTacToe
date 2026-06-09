@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL40;
 
 public class UI_Shader extends Shader {
     public UI_Shader() {
-        super("./src/main/resources/shaders/shader.vsh", "./resources/shaders/shader.fsh");
+        super("./src/main/resources/shaders/shader.vsh", "./src/main/resources/shaders/shader.fsh");
     }
 
     Texture texture;
